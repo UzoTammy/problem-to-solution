@@ -1,0 +1,76 @@
+{% extends 'core/base.html'%}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h3 class="text-center">Network Fundamentals</h3>
+            <h4>Hosts</h4>
+            <p>Hosts is any device that can send or receive traffic (data in various forms) over a network. </p>
+            <p>A host can be either a server or a client depending on what role it is playing within the network.</p>
+            <p>A client is the host that makes a request from a server/sends traffic, while a server is the host that will respond.</p>
+            <p>These days alot of devices are hosts. Smart TV to Smart watch, Robots, Mobile phones etc</p>
+            <h3>IP Address</h3>
+            <p>This serves as the identity of the host. They are a 32 bits set of 0s and 1s grouped in four octets.
+                It is assigned within the network.
+            </p>
+            <p>Sample IP address in bits: <code>10010101110010010100101001001100</code></p>
+            <p>IP address grouped: <code>10010101 11001001 01001010 01001100</code> -> <code>149.201.74.76</code></p>
+            <p>
+                It is structured by IETF (Internet Engineering Task Force) and regulated by IANA (Internet Assigned Number Authority)
+                who also allocates to nations and regions. ISPs (Internet Service providers) are responsible for sales and distribution.
+            </p>
+            <p>IP address can be likened to a person's assigned phone number and the Mac address as the person's name. Also, when
+                traffic is sent over the network, the data pack will have source and destination IP Addresses. Similar to a person
+                knowing where he is and where he is going.
+            </p>
+            <h4>IP address is hierachically assigned</h4>
+            <p>
+                What does this mean? An organization can obtain a particular range of IP address say for Acme Inc. they are assigned
+            10.X.X.X, the org will decide how to appropraite the IPs within their network. They have London, Tokyo and New York offices and 
+            decided to assign as follows 10.10.X.X, 10.20.X.X and 10.30.X.X respectively. Also in each office, they have R&D, Marketing and 
+            Engineering and further assigned as 10.10.40.X, 10.10.50.X, 10.10.60.X respectively and repeat same for Tokyo and New York
+
+            </p>
+            <table class="table">
+                <legend>Acme - 70.X.X.X</legend>
+                <thead>
+                    <tr>
+                        <th>Department</th>
+                        <th>London</th>
+                        <th>Tokyo</th>
+                        <th>New York</th>
+                        <th>Subnet</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>R&D</td>
+                        <td>70.10.40.X</td>
+                        <td>70.20.40.X</td>
+                        <td>70.30.40.X</td>
+                        <td>RDNet</td>
+                    </tr>
+                    <tr>
+                        <td>Marketing</td>
+                        <td>70.10.50.X</td>
+                        <td>70.20.50.X</td>
+                        <td>70.30.50.X</td>
+                        <td>MNet</td>
+                    </tr>
+                    <tr>
+                        <td>Engineering</td>
+                        <td>70.10.60.X</td>
+                        <td>70.30.60.X</td>
+                        <td>70.30.60.X</td>
+                        <td>ENet</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            
+
+        </div>
+    </div>
+</div>
+{% endblock %}

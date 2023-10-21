@@ -1,0 +1,716 @@
+{% extends 'core/base.html' %}
+
+{% block head %}
+<style>
+    .fixed-section {
+        position: fixed;
+        top: 40px;
+        bottom: 0;
+        left: 0;
+        padding: 5px;
+        overflow-y: scroll;
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    /* .left-div, */
+    .right-div {
+        flex: 1;
+    }
+
+    @media (max-width: 768px) {
+        .left-div {
+            flex: 1;
+            display: none;
+            /* position: top; */
+        }
+    }
+
+    .indent-4 {
+        padding-left: 20px;
+        /* Create padding on the left side of the element */
+    }
+
+    .code-block {
+        background-color: azure;
+        border: .07rem ridge black;
+        padding-inline-end: 20px;
+    }
+
+    .py-term {
+        list-style: '>> ';
+        color: gray;
+    }
+</style>
+{% endblock%}
+
+
+{% block content %}
+
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col-sm-3 left-div">
+            <nav id="navbar-example3" class="h-100 flex-column pe-4 border-end fixed-section">
+                <nav class="nav nav-link flex-column">
+                    <a class="nav-link m-0 link-info" href="#intro">
+                        <h5>Introduction</h5>
+                    </a>
+                </nav>
+                <nav class="nav nav-link flex-column">
+                    <a class="nav-link link-info" href="#chapter1">Chapter 1: Fundamental basics</a>
+                    <nav class="nav nav-link flex-column">
+                        <a class="nav-link link-dark ms-1 my-0" href="#program11">1.1-Variables and data types</a>
+                        <a class="nav-link link-dark ms-1 my-0" href="#program12">1.2-Variable Rules </a>
+                        <a class="nav-link link-dark ms-1 my-0" href="#program13">1.3-Basic Operators</a>
+                        <a class="nav-link link-dark ms-1 my-0" href="#program14">1.4-Code Execution</a>
+                    </nav>
+                    <a class="nav-link link-info" href="#chapter2">Chapter 2: Function</a>
+                    <nav class="nav nav-link flex-column">
+                        <a class="nav-link link-dark ms-1 my-0" href="#program21">2.1-</a>
+                        <a class="nav-link link-dark ms-1 my-0" href="#program22">2.2- </a>
+                    </nav>
+                    <a class="nav-link link-info" href="#chapter3">Chapter 3:</a>
+                    <nav class="nav nav-link flex-column">
+                        <a class="nav-link link-dark ms-3 my-0" href="#program31">3.1-</a>
+                        <a class="nav-link link-dark ms-3 my-0" href="#program32">3.2-</a>
+                    </nav>
+                </nav>
+
+            </nav>
+        </div>
+
+        <div class="col-sm-9">
+            <div class="container">
+                <div id="chapter1">
+                    <div class="row mt-3">
+                        <div class="col">
+                            <h3 class="text-center">
+                                Python Programming Language
+                            </h3>
+
+                            <h4>Introduction to Python</h4>
+                            <p>Python is a versatile, interpreted, and high-level programming language known
+                                for its simplicity and readability. Created by Guido van Rossum in 1991, Python
+                                has become one of the most popular programming languages worldwide.
+                            </p>
+
+                            <h4>Key Features:</h4>
+
+                            <div class="row">
+                                <div class="col-sm">
+                                    <ul>
+                                        <li>General-Purpose Language</li>
+                                        <li>Readability and Simplicity</li>
+                                        <li>Interpreted Language</li>
+                                        <li>Versatile Applications</li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm">
+                                    <ul>
+                                        <li>High-Level Language</li>
+                                        <li>Cross-Platform</li>
+                                        <li>Large Standard Library</li>
+
+                                    </ul>
+                                </div>
+                                <div class="col-sm">
+                                    <ul>
+                                        <li>Open Source</li>
+                                        <li>Dynamic Typing</li>
+                                        <li>Object-Oriented</li>
+                                        <li>Community and Ecosystem</li>
+
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <p>Python's strengths lie in its ease of use, rich standard library, and active community,
+                                making it suitable for
+                                a wide range of applications, including web development, data analysis, scientific
+                                computing, machine learning,
+                                and automation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <section class="mb-2" id="program11">
+                    <h4 class="text-info">Program 1.1 - Basic data types</h4>
+                    <hr>
+                    <div class="row">
+                        <div class="col">
+                            <ol>
+                                <li>Integer (int):
+                                    <ul>
+                                        <li>Used to store whole numbers</li>
+                                        <li class="py-term"><code>age = 25</code></li>
+                                    </ul>
+                                </li>
+                                <li>Float (float):
+                                    <ul>
+                                        <li>Used to store decimal numbers</li>
+                                        <li class="py-term"><code>price = 10.99</code></li>
+                                    </ul>
+                                </li>
+                                <li>String (str):
+                                    <ul>
+                                        <li>Used to store text</li>
+                                        <li>Enclosed in a single quote ('') or double quote ("")</li>
+                                        <li class="py-term"><code>name = 'John'</code> same as
+                                            <code>name = "John"</code>
+                                        </li>
+                                        <li class="py-term"><code>his_age = '18'</code> <span
+                                                class="text-black">(Numbers can be presented as string)</span> </li>
+                                    </ul>
+                                </li>
+                                <li>Boolean (bool):
+                                    <ul>
+                                        <li>Used to store True or False values</li>
+                                        <li>It is important you know now that T in True is capital as well as F in
+                                            False. This
+                                            is a rule in python
+                                        </li>
+                                        <li>Used for decision making</li>
+                                        <li class="py-term"><code>is_valid = True</code></li>
+                                    </ul>
+                                </li>
+                                <li>List (list()):
+                                    <ul>
+                                        <li>Used to store a collection of items, which can be different data types</li>
+                                        <li>It is enclosed in a square brackets []</li>
+                                        <li class="py-term"><code>prime_numbers = [1, 2, 3, 5, 7]</code></li>
+                                    </ul>
+                                </li>
+                                <li>Tuple (tuple()):
+                                    <ul>
+                                        <li>It is similar to lists but are immutable (cannot be modified once created)
+                                        </li>
+                                        <li>It is enclosed in a brackets ()</li>
+                                        <li class="py-term"><code>prime_numbers = (1, 2, 3, 5, 7)</code></li>
+                                    </ul>
+                                </li>
+                                <li>Dictionary (dict()):
+                                    <ul>
+                                        <li>Used to store key-value pairs </li>
+                                        <li>It is enclosed in a curly brackets {}</li>
+                                        <li class="py-term"><code>person = {'name': 'Mike', "age": 20}</code></li>
+                                    </ul>
+                                </li>
+                                <li>Set (set()):
+                                    <ul>
+                                        <li>Used to store a collection of <em>unique</em> item</li>
+                                        <li>It is enclosed in a curly brackets {}</li>
+                                        <li class="py-term"><code>unique_samples = {10, 15, 63, 17, 4}</code></li>
+                                    </ul>
+                                <li>NoneType (None):
+                                    <ul>
+                                        <li>Represents the absent of a value or a null value</li>
+                                        <li>none or NONE is unacceptable</li>
+                                        <li class="py-term"><code>result = None</code></li>
+                                    </ul>
+
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="col">
+                            <h3>Practice</h3>
+                            <em>Let's confirm variable types and values</em> <br>
+                            <ol>
+                                <li>
+                                    <ul>
+                                        <li class="py-term"><code>type(age)</code> -> class_int</li>
+                                        <li class="py-term"><code>2 + 2</code> -> 4</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul>
+                                        <li class="py-term"><code>type(price)</code> -> class_float</li>
+                                        <li class="py-term"><code>10.56 + 6.22</code> -> 16.78</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul>
+                                        <li class="py-term"><code>type(name)</code> -> class_str</li>
+                                        <li class="py-term"><code>'My name is ' + name</code> -> My name is John</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul>
+                                        <li class="py-term"><code>type(is_valid)</code> -> class_bool</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul>
+                                        <li class="py-term"><code>prime_numbers</code> -> [1, 2, 3, 5, 7]</li>
+                                        <li class="py-term"><code>prime_numbers[0]</code> -> 1</li>
+                                        <li class="py-term"><code>prime_numbers[3]</code> -> 5</li>
+                                        <li>The items in list are obtained from the indices starting from 0. More
+                                            details on list later</li>
+
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul>
+                                        <li><code>prime_numbers</code> -> (1, 2, 3, 5, 7)</li>
+                                        <li><code>prime_numbers[0]</code> -> 1</li>
+                                        <li><code>prime_numbers[2]</code> -> 2</li>
+                                        <li>The items in tuple are obtained from the indices starting from 0. More
+                                            details on tuple later and how
+                                            it differs from list
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul>
+                                        <li class="py-term"><code>person</code> -> {'name': 'Mike', 'age': 20}</li>
+                                        <li class="py-term"><code>person['name']</code> -> Mike </li>
+                                        <li class="py-term"><code>person['age']</code> -> 20 (note: person.get('age')
+                                            same as person['age'])</li>
+                                        <li>The dictionary will be covered in more details later. </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul>
+                                        <li class="py-term"><code>unique_samples = {63, 15, 10, 17, 4}</code></li>
+                                        <li class="py-term"><code>unique_samples[0]</code> -> 63 (set items shuffle each
+                                            time it is called)</li>
+                                        <li>To be covered in more details later. But remember that no item will repeat
+                                            in a set, if duplicate item
+                                            occur, it will retain one.
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ol>
+
+                        </div>
+                    </div>
+
+                </section>
+                <section class="mb-2" id="program12">
+                    <h4 class="text-info">Program 1.2 - Variable rules</h4>
+                    <hr>
+                    <p>
+                        In Python, variable names must adhere to the following rules:</p>
+                    <ol>
+                        <li>Variable names are case-sensitive: `myVariable` and `myvariable` are treated as different
+                            variables.</li>
+                        <li>Variable names can consist of letters (both uppercase and lowercase), digits, and
+                            underscores.
+                            However, a variable name cannot start with a digit.
+                        </li>
+                        <li>
+                            Variable names must start with a letter (a-z, A-Z) or an underscore (_). They cannot start
+                            with a digit (0-9).
+                        </li>
+                        <li>
+                            Variable names can contain letters, digits, and underscores. For example, `my_var_1` is a
+                            valid variable name.
+                        </li>
+                        <li>
+                            Python has some reserved words
+                            <!-- Button trigger modal -->
+                            <a style="text-decoration: none;" type="button" class="" data-bs-toggle="modal"
+                                data-bs-target="#keywordModal">
+                                keywords
+                            </a>
+                            that cannot be used as variable names because they
+                            have special meanings in the language. For example, you cannot use words like `if`, `else`,
+                            `for`, `while`, `import`, and others as variable names.
+
+                        </li>
+                        <li>
+                            Variable names should be descriptive and reflect the purpose of the variable. This helps
+                            make your code more readable and maintainable.
+                        </li>
+                        <li>
+                            By convention, variable names are usually written in lowercase letters with words separated
+                            by underscores (snake_case) for better readability. For example, `my_variable_name`.
+                        </li>
+                        <li>Although not a strict rule, Python's style guide (PEP 8) recommends using lowercase for
+                            variable names and reserving uppercase letters for constants.
+                        </li>
+                    </ol>
+                    <div class="row">
+                        <div class="col">
+                            <p>Here are some examples of valid and invalid variable names:</p>
+                            <ul>
+                                <li>my_variable</li>
+                                <li>user_name</li>
+                                <li>num1</li>
+                                <li>_total</li>
+                                <li>count123</li>
+                            </ul>
+
+                        </div>
+                        <div class="col">
+                            <p>Sample of invalid variable names:</p>
+                            <ul>
+                                <li>$money: Invalid character</li>
+                                <li>2_letters: Cannot start with a number</li>
+                                <li>user-name: Invalid character</li>
+                                <li>import: Invalid already used as keyword</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <p>
+                        Remember that following these variable naming conventions and rules will help you write cleaner
+                        and
+                        more maintainable Python code.
+                    </p>
+                </section>
+                <section class="mb-2" id="program13">
+                    <h4 class="text-info">Program 1.3-Basic Operators</h4>
+                    <hr>
+                    <p>Operators are symbols or special characters that are used to perform operations on variables and
+                        values.
+                        Python supports a wide range of operators, including arithmetic, comparison, logical,
+                        assignment,
+                        membership, identity, and bitwise operators. Here's an overview of some of the most commonly
+                        used operators in Python:
+                    </p>
+                    <div class="row">
+                        <div class="col">
+                            <p><b>Arithmetic:</b> Most of them is fimilair in basic maths</p>
+                            <ul>
+                                <li>Addition +</li>
+                                <li>Substraction -</li>
+                                <li>Multiplication *</li>
+                                <li>Division / (note: forward slash)</li>
+                                <li>Modulus %: Used to get the remainder in a number division
+                                    <br> <code>10%3</code> will be 1
+                                </li>
+                                <li>Exponentiation **: <code>2**3</code> will mean <code>2*2*2</code></li>
+                                <li>Floor division //: </li>
+
+                            </ul>
+                        </div>
+
+                        <div class="col">
+                            <p><b>Comparison:</b> Good for decision making (to compare)</p>
+                            <ul>
+                                <li>Equal to ==</li>
+                                <li>Not equal to !=</li>
+                                <li>Less than < </li>
+                                <li>Greater than ></li>
+                                <li>Less than or equal to <= </li>
+                                <li>Greater than or equal to >=</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p>
+                        Other operators will be discussed later. For now, we can move ahead with these.
+                        Note that assignment operator (=) have been introduced.
+                    </p>
+                </section>
+                <section class="mb-2" id="program14">
+                    <h4 class="text-info">Program 1.4-Code Execution</h4>
+                    <hr>
+                    <p>By default, code is executed sequentially (step by step), it is executed in the order they appear
+                        from top to bottom. The code below will yield according to the order of presentation as shown on
+                        the right.
+                    </p>
+                    <h5>1.4.1-Sequential execution</h5>
+                    <div class="row">
+                        <div class="col">
+                            <ul class="py-term">
+                                <li><code>print('step 1')</code></li>
+                                <li><code>print('step 2')</code></li>
+                                <li><code>print('step 3')</code></li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <ul>
+                                <li>step 1</li>
+                                <li>step 2</li>
+                                <li>step 3</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h5>1.4.2-Conditional execution (power of decision making)</h5>
+                    <p>
+                        Your program execution can be controlled with conditional statement(s) (like if...else
+                        statement).
+                        The table below compares human language to computer language in a manner you can relate to, at
+                        this point, you can begin to
+                        appreciate the world of computer programming.
+                    </p>
+
+                    <table class="table table-bordered" data-bs-toggle="table">
+                        <thead>
+                            <tr class="text-center">
+                                <th colspan="2">English Language</th>
+                                <th colspan="2">Python Language</th>
+                            </tr>
+                            <tr>
+                                <th>Question</th>
+                                <th>Answer</th>
+                                <th>Comparison Statement</th>
+                                <th>Outcome</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Is 10 equal to 10?</td>
+                                <td>yes</td>
+                                <td>10 == 10</td>
+                                <td>True</td>
+                            </tr>
+                            <tr>
+                                <td>Is 10 equal to 20?</td>
+                                <td>no</td>
+                                <td>10 == 20</td>
+                                <td>False</td>
+                            </tr>
+                            <tr>
+                                <td>Is 2 equal to 5?</td>
+                                <td>no</td>
+                                <td>2 > 5</td>
+                                <td>False</td>
+                            </tr>
+                            <tr>
+                                <td>Is 37 greater or equal to 20?</td>
+                                <td>yes</td>
+                                <td>37 >= 20</td>
+                                <td>True</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>#Table 1.4</tfoot>
+                    </table>
+                    <p>From table #1.4, a question in human language is similar to the comparison statement in Python
+                        (or any programming language)
+                        which resulted to a boolean type outcome (that represented the yes and no we got in English
+                        language). With this outcome, control
+                        can be implemented in the flow of program. Let us illustrate this with an example.
+                    </p>
+                    <p>
+                        Assuming any number greater than 10 and 10 itself is a big number and numbers below 10 are small
+                        numbers.
+                    </p>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <ul class="py-term code-block">
+                                <li><code>number = 12</code> #lets assign a number</li>
+                                <li><code>if number >= 10:</code></li>
+                                <li><code class="indent-4">print("This is a big number")</code></li>
+                                <li><code>else:</code></li>
+                                <li><code class="indent-4">print("This is a small number")</code></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <p>Obviously, 12 is greater than 10, therefore the comparison outcome is True, and the statement
+                        between if and else will
+                        execute. In this case, print("This is a big number").
+                        This section has introduced us to if...else statement, it is used to conditionally execute a
+                        section of code block and will form a very big essential part of coding.
+                    </p>
+
+                    <h5>1.4.3-Looping</h5>
+
+                    <p>This carries out execution in a repetitive manner. It could require going through a line of code
+                        or series
+                        of lines until the assigned task is complete. There are two types of looping:
+                    <ol>
+                        <li>for loop: Used when you know the number of iterations in advance</li>
+                        <li>while loop: Used when the number of iterations depends on a condition</li>
+                    </ol>
+                    </p>
+
+                    <p>We can loop through a list. A list is a defined array of items</p>
+                    <div class="row">
+                        <div class="col-sm-6 d-flex justify-content-center">
+                            <ul class="py-term code-block">
+                                <li><code>prime_numbers = [1, 2, 3, 5, 7, 11, 13]</code></li>
+                                <li><code>for number in prime_numbers:</code></li>
+                                <li class="indent-4"><code>print(number)</code></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p>This is a loop statement generated by for ... in ... statement. It is made to go through the list
+                        items
+                        one after another until the last item before it terminates. The number of items in the list is 7
+                        and print
+                        will happen 7 times printing each item on the list one at a time.
+                    </p>
+                    <p>while loop can be used to go through a block of code until a condition is satisfied. It is like a
+                        situation where someone is asked to keep doing something until a condition is met.
+                    </p>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <ul class="py-term code-block">
+                                <li><code>count = 0</code></li>
+                                <li><code>while count <= 10</code></li>
+                                <li class="indent-4"><code>count = count + 2</code></li>
+                                <li class="indent-4"><code>print(count)</code></li>
+                                <li><code>print("out of loop")</code></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6">
+                            <p>This process will always have a variable initialized so we have a starting point
+                                and a variable to compare with. Also, this variable will need to be adjusted to
+                                tend towards the endpoint (in this case 10).
+                            </p>
+                        </div>
+                    </div>
+                    <p>Let's review the steps</p>
+                    <ol>
+                        <li>variable count is assigned an integer 0</li>
+                        <li>count which is 0 is compared to integer 10 and result is True (because 0 is less than 10)
+                        </li>
+                        <li>count is reassigned to 2 (0 + 2)</li>
+                        <li>count is sent to output</li>
+                        <li>The execution goes back to the while statement at step 2 and repeat to step 5
+                            This process will continue until count becomes greater than 10. This process is called
+                            looping
+                        </li>
+                    </ol>
+
+                    <h5>1.4.4-Switching</h5>
+
+                    <p>Another execution type known as switching can be applied to achieve a desired flow. This type
+                        will take a variable and check it out with either an if or an elif statement looking for a True
+                        result
+                        to enter the block.
+                    </p>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <ul class="py-term code-block">
+                                <li class=""><code>today = "Saturday"</code></li>
+                                <li><code>if today == "Sunday":</code></li>
+                                <li class="indent-4"><code>print("Go to Service")</code></li>
+                                <li><code>elif today == "Saturday":</code></li>
+                                <li class="indent-4"><code>print("Relax at home")</code></li>
+                                <li><code>else:</code></li>
+                                <li class="indent-4"><code>print("Go to work")</code></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p>
+                        Even though there is another code execution strategy, we will not talk about it at this level
+                        until we get
+                        our hand completely immersed in python. Error handling is a very important aspect of coding and
+                        I can't wait to
+                        introduce you to it. Besides, this program is long enough.
+                    </p>
+                </section>
+            </div>
+            <hr>
+            <div class="container">
+                <div id="chapter2">
+                    <div class="row">
+                        <div class="col">
+                            <h3>Chapter 2 - Function</h3>
+                            <h4>Define a function and call it</h4>
+                            <p>A function is defined by the keyword def and the name of the function enclosed in
+                                brackets</p>
+                            <ul class="py-term code-block">
+                                <li><code>def new_function():</code></li>
+                                <li class="indent-4"><code>print('called from my function')</code></li>
+                            </ul>
+                            <p>Call the function,</p>
+                            <ul class="py-term code-block">
+                                <li><code>new_function()</code>-> called from my function</li>
+                            </ul>
+                            <p>A function with an argument</p>
+                            <ul class="py-term code-block">
+                                <li><code>def greet(name):</code></li>
+                                <li class="indent-4"><code>print('Hello ' + name)</code></li>
+                                <li></li>
+                                <li><code>greet('Frank')</code>-> Hello Frank</li>
+                            </ul>
+                            <p>A function with multiple arguments</p>
+                            <small>1. Countable arguments</small>
+                            <ul class="py-term code-block">
+                                <li><code>def greet(person_1, person-2):</code></li>
+                                <li class="indent-4"><code>print('Hello ' + person_1 + ' & ' + person_2)</code>
+                                </li>
+                                <li></li>
+                                <li><code>greet('Sam', 'John')</code> -> Hello Sam & John</li>
+                            </ul>
+                            <small>2. Uncountable arguments</small>
+                            <ul class="py-term code-block">
+                                <li><code>def greet(**persons):</code></li>
+                                <li class="indent-4"><code>print('Hello ' + persons[0] + ' & ' + persons[1])</code>
+                                </li>
+                                <li></li>
+                                <li><code>greet('Sam', 'John')</code> -> Hello Sam & John</li>
+                            </ul>
+                            <p>We can use a list of items as argument</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--Keyword Modal -->
+<div class="modal fade" id="keywordModal" tabindex="-1" aria-labelledby="keywordModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="keywordModalLabel">Keywords</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col">
+                        <ul>
+                            <li>False</li>
+                            <li>None</li>
+                            <li>True</li>
+                            <li>and</li>
+                            <li>as</li>
+                            <li>assert</li>
+                            <li>break</li>
+                            <li>class</li>
+                            <li>continue</li>
+                            <li>def</li>
+                            <li>del</li>
+
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <ul>
+                            <li>elif</li>
+                            <li>else</li>
+                            <li>except</li>
+                            <li>finally</li>
+                            <li>for</li>
+                            <li>from</li>
+                            <li>global</li>
+                            <li>if</li>
+                            <li>import</li>
+                            <li>in</li>
+                            <li>is</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <ul>
+                            <li>lambda</li>
+                            <li>nonlocal</li>
+                            <li>not</li>
+                            <li>or</li>
+                            <li>pass</li>
+                            <li>raise</li>
+                            <li>return</li>
+                            <li>try</li>
+                            <li>while</li>
+                            <li>with</li>
+                            <li>yield</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
