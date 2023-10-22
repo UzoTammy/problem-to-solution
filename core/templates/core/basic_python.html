@@ -617,41 +617,87 @@
                                 <li><code>new_function()</code>-> called from my function</li>
                             </ul>
                             <p>A function with an argument</p>
-                            <ul class="py-term code-block">
-                                <li><code>def greet(name):</code></li>
-                                <li class="indent-4"><code>print('Hello ' + name)</code></li>
-                                <li></li>
-                                <li><code>greet('Frank')</code>-> Hello Frank</li>
-                            </ul>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <ul class="py-term code-block">
+                                        <li><code>def greet(name):</code></li>
+                                        <li class="indent-4"><code>print('Hello ' + name)</code></li>
+                                        <li></li>
+                                        <li><code>greet('Frank')</code>-> Hello Frank</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
                             <p>A function with multiple arguments</p>
                             <small>1. Countable arguments</small>
-                            <ul class="py-term code-block">
-                                <li><code>def greet(person_1, person-2):</code></li>
-                                <li class="indent-4"><code>print('Hello ' + person_1 + ' & ' + person_2)</code>
-                                </li>
-                                <li></li>
-                                <li><code>greet('Sam', 'John')</code> -> Hello Sam & John</li>
-                            </ul>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <ul class="py-term code-block">
+                                        <li><code>def greet(person_1, person-2):</code></li>
+                                        <li class="indent-4"><code>print('Hello ' + person_1 + ' & ' + person_2)</code>
+                                        </li>
+                                        <li></li>
+                                        <li><code>greet('Sam', 'John')</code> -> Hello Sam & John</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
                             <small>2. Uncountable arguments</small>
-                            <ul class="py-term code-block">
-                                <li><code>def greet(**persons):</code></li>
-                                <li class="indent-4"><code>print('Hello ' + persons[0] + ' & ' + persons[1])</code>
-                                </li>
-                                <li></li>
-                                <li><code>greet('Sam', 'John')</code> -> Hello Sam & John</li>
-                            </ul>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <ul class="py-term code-block">
+                                        <li><code>def greet(**persons):</code></li>
+                                        <li class="indent-4"><code>print('Hello ' + persons[0] + ' & ' + persons[1])</code>
+                                        </li>
+                                        <li></li>
+                                        <li><code>greet('Sam', 'John')</code> -> Hello Sam & John</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
                             <p>We can use a list of related items as argument to put function into good use</p>
                             <p>Let's take a list of scores of students out of a total of 400 and get their percentage mark</p>
-                            <ul class="py-term code-block">
-                                <li>student_scores = [215, 285, 321, 180, 245, 290, 154, 367, 256]</li>
-                                <li><code>def percent_score(scores):</code></li>
-                                <li  class="indent-4"><code>result = []</code></li>
-                                <li class="indent-4"><code>for score in scores:</code></li>
-                                <li class="indent-8"><code>result.append(100*score/400)</code></li>
-                                <li class="indent-4"><code>return result</code></li>
-                                <li></li>
-                                <li><code>percent_score(student_scores)</code> -> [53.75, 71.25, 80.25, 45.0, 61.25, 72.5, 38.5, 91.75, 64.0]</li>
-                            </ul>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <ul class="py-term code-block">
+                                        <li>student_scores = [215, 285, 321, 180, 245, 290, 154, 367, 256]</li>
+                                        <li><code>def percent_score(scores):</code></li>
+                                        <li  class="indent-4"><code>result = []</code></li>
+                                        <li class="indent-4"><code>for score in scores:</code></li>
+                                        <li class="indent-8"><code>result.append(100*score/400)</code></li>
+                                        <li class="indent-4"><code>return result</code></li>
+                                        <li></li>
+                                        <li><code>percent_score(student_scores)</code> -> [53.75, 71.25, 80.25, 45.0, 61.25, 72.5, 38.5, 91.75, 64.0]</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <h4>The return value in a function</h4>
+                            <p>
+                                Functions usually end with a return statement of the result of the function. However, when it is not used 
+                                in a function, None is returned. The returned result can be whatever is defined within the function or 
+                                a combination of elements. Just as result returned in the above function is a list. 
+                            </p>
+                            <p>Let's illustrate this with a function that takes an argument and returns a tuple</p>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <ul class="py-term code-block">
+                                        <li><code>import math</code></li>
+                                        <li>..</li>
+                                        <li><code>def circle(radius):</code></li>
+                                        <li class="indent-4"># Obtain volume and surface area</li>
+                                        <li class="indent-4"><code>pi = math.pi</code></li>
+                                        <li class="indent-4"><code>volume = pi * radius**3</code></li>
+                                        <li class="indent-4"><code>surface_area = 3 * pi * radius**2</code></li>
+                                        <li class="indent-4"><code>return volume, surface_area</code></li>
+                                        <li>...</li>
+                                        <li><code>circle(10)</code> -> (3140, 942)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p>The above function returned a tuple which is (volume, surface_area). The omitted bracket omitted does not
+                                matter for tuple (not so for other data types though)
+                            </p>
                         </div>
                     </div>
                 </div>
