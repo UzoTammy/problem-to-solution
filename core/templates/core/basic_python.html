@@ -33,7 +33,9 @@
         padding-left: 20px;
         /* Create padding on the left side of the element */
     }
-
+    .indent-8 {
+        padding-left: 40px;
+    }
     .code-block {
         background-color: azure;
         border: .07rem ridge black;
@@ -638,11 +640,21 @@
                                 <li></li>
                                 <li><code>greet('Sam', 'John')</code> -> Hello Sam & John</li>
                             </ul>
-                            <p>We can use a list of items as argument</p>
+                            <p>We can use a list of related items as argument to put function into good use</p>
+                            <p>Let's take a list of scores of students out of a total of 400 and get their percentage mark</p>
+                            <ul class="py-term code-block">
+                                <li>student_scores = [215, 285, 321, 180, 245, 290, 154, 367, 256]</li>
+                                <li><code>def percent_score(scores):</code></li>
+                                <li  class="indent-4"><code>result = []</code></li>
+                                <li class="indent-4"><code>for score in scores:</code></li>
+                                <li class="indent-8"><code>result.append(100*score/400)</code></li>
+                                <li class="indent-4"><code>return result</code></li>
+                                <li></li>
+                                <li><code>percent_score(student_scores)</code> -> [53.75, 71.25, 80.25, 45.0, 61.25, 72.5, 38.5, 91.75, 64.0]</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

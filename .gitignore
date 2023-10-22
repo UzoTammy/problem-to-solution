@@ -168,5 +168,6 @@ experiment.py
 requirements.txt
 Pipfile
 Pipfile.lock
+*.logs
 
 
