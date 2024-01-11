@@ -14,7 +14,8 @@ class Course:
             'category': 'Basic', # basic, concepts
             'edition': '1',
             'price': 0.00,
-            'is_available': True
+            'is_available': True,
+            'url_name': 'basic-python'
         },
         {
             'title': 'Cascading Style Sheet (CSS) Basics',
@@ -25,7 +26,8 @@ class Course:
             'category': 'Basic', # basic, concepts
             'edition': '1',
             'price': 0.00,
-            'is_available': True
+            'is_available': True,
+            'url_name': 'basic-python'
         },
         {
             'title': 'Instant Bootstrap',
@@ -38,7 +40,8 @@ class Course:
             'category': 'Concept',
             'edition': '1',
             'price': 10,
-            'is_available': True
+            'is_available': True,
+            'url_name': 'basic-python'
         },
         {
             'title': "Introduction to Javascript",
@@ -51,7 +54,19 @@ class Course:
             'category': 'Concept',
             'edition': '1',
             'price': 0,
-            'is_available': True
+            'is_available': True,
+            'url_name': 'basic-python'
+        },
+        {
+            'title': 'Object Oriented Program',
+            'subtitle': 'OOP made easy',
+            'users_story': """This sections takes OOP head on, I bet you the step by step thorough guide to
+            will help you understand this concept that takes ages to learn.""",
+            'date_created': datetime.date(2024, 3, 12),
+            'category': 'Concept',
+            'edition': '1',
+            'price': 10.00,
+            'is_available': True,
+            'url_name': 'oop'
         }
-
     ]

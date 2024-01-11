@@ -33,9 +33,11 @@
         padding-left: 20px;
         /* Create padding on the left side of the element */
     }
+
     .indent-8 {
         padding-left: 40px;
     }
+
     .code-block {
         background-color: azure;
         border: .07rem ridge black;
@@ -55,7 +57,7 @@
 <div class="container-fluid mt-5">
     <div class="row">
         <div class="col-sm-3 left-div">
-            <nav id="navbar-example3" class="h-100 flex-column pe-4 border-end fixed-section">
+            <nav id="navbar-example3" class="h-100 flex-column pe-4 fixed-section">
                 <nav class="nav nav-link flex-column">
                     <a class="nav-link m-0 link-info" href="#intro">
                         <h5>Introduction</h5>
@@ -71,13 +73,17 @@
                     </nav>
                     <a class="nav-link link-info" href="#chapter2">Chapter 2: Function</a>
                     <nav class="nav nav-link flex-column">
-                        <a class="nav-link link-dark ms-1 my-0" href="#program21">2.1-</a>
-                        <a class="nav-link link-dark ms-1 my-0" href="#program22">2.2- </a>
+                        <a class="nav-link link-dark ms-1 my-0" href="#program21">2.1-Define function and call it</a>
+                        <a class="nav-link link-dark ms-1 my-0" href="#program22">2.2-The return statement in a
+                            function</a>
                     </nav>
-                    <a class="nav-link link-info" href="#chapter3">Chapter 3:</a>
+                    <a class="nav-link link-info" href="#chapter3">Chapter 3: Other data objects</a>
                     <nav class="nav nav-link flex-column">
-                        <a class="nav-link link-dark ms-3 my-0" href="#program31">3.1-</a>
-                        <a class="nav-link link-dark ms-3 my-0" href="#program32">3.2-</a>
+                        <a class="nav-link link-dark ms-3 my-0" href="#program31">3.1-Datetime object</a>
+                        <a class="nav-link link-dark ms-3 my-0" href="#program32">3.2-Class object</a>
+                        <a class="nav-link link-dark ms-3 my-0" href="#program33">3.3-Image object</a>
+                        <a class="nav-link link-dark ms-3 my-0" href="#program34">3.4-File object</a>
+                        
                     </nav>
                 </nav>
 
@@ -604,108 +610,296 @@
                 <div id="chapter2">
                     <div class="row">
                         <div class="col">
+
                             <h3>Chapter 2 - Function</h3>
-                            <h4>Define a function and call it</h4>
-                            <p>A function is defined by the keyword def and the name of the function enclosed in
-                                brackets</p>
-                            <ul class="py-term code-block">
-                                <li><code>def new_function():</code></li>
-                                <li class="indent-4"><code>print('called from my function')</code></li>
-                            </ul>
-                            <p>Call the function,</p>
-                            <ul class="py-term code-block">
-                                <li><code>new_function()</code>-> called from my function</li>
-                            </ul>
-                            <p>A function with an argument</p>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <ul class="py-term code-block">
-                                        <li><code>def greet(name):</code></li>
-                                        <li class="indent-4"><code>print('Hello ' + name)</code></li>
-                                        <li></li>
-                                        <li><code>greet('Frank')</code>-> Hello Frank</li>
-                                    </ul>
+
+                            <section class="mb-2" id="program21">
+                                <h4 class="text-info">Program 2.1 - Define function and call it</h4>
+                                <hr>
+                                <p>A function is defined by the keyword def and the name of the function enclosed in
+                                    brackets</p>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <ul class="py-term code-block">
+                                            <li><code>def new_function():</code></li>
+                                            <li class="indent-4"><code>print('called from my function')</code></li>
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
-                            
-                            <p>A function with multiple arguments</p>
-                            <small>1. Countable arguments</small>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <ul class="py-term code-block">
-                                        <li><code>def greet(person_1, person-2):</code></li>
-                                        <li class="indent-4"><code>print('Hello ' + person_1 + ' & ' + person_2)</code>
-                                        </li>
-                                        <li></li>
-                                        <li><code>greet('Sam', 'John')</code> -> Hello Sam & John</li>
-                                    </ul>
+
+                                <p>Call the function,</p>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <ul class="py-term code-block">
+                                            <li><code>new_function()</code>-> called from my function</li>
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
-                            
-                            <small>2. Uncountable arguments</small>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <ul class="py-term code-block">
-                                        <li><code>def greet(**persons):</code></li>
-                                        <li class="indent-4"><code>print('Hello ' + persons[0] + ' & ' + persons[1])</code>
-                                        </li>
-                                        <li></li>
-                                        <li><code>greet('Sam', 'John')</code> -> Hello Sam & John</li>
-                                    </ul>
+
+                                <p>A function with an argument</p>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <ul class="py-term code-block">
+                                            <li><code>def greet(name):</code></li>
+                                            <li class="indent-4"><code>print('Hello ' + name)</code></li>
+                                            <li></li>
+                                            <li><code>greet('Frank')</code>-> Hello Frank</li>
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
-                            
-                            <p>We can use a list of related items as argument to put function into good use</p>
-                            <p>Let's take a list of scores of students out of a total of 400 and get their percentage mark</p>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <ul class="py-term code-block">
-                                        <li>student_scores = [215, 285, 321, 180, 245, 290, 154, 367, 256]</li>
-                                        <li><code>def percent_score(scores):</code></li>
-                                        <li  class="indent-4"><code>result = []</code></li>
-                                        <li class="indent-4"><code>for score in scores:</code></li>
-                                        <li class="indent-8"><code>result.append(100*score/400)</code></li>
-                                        <li class="indent-4"><code>return result</code></li>
-                                        <li></li>
-                                        <li><code>percent_score(student_scores)</code> -> [53.75, 71.25, 80.25, 45.0, 61.25, 72.5, 38.5, 91.75, 64.0]</li>
-                                    </ul>
+
+                                <p>A function with multiple arguments</p>
+                                <small>1. Countable arguments</small>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <ul class="py-term code-block">
+                                            <li><code>def greet(person_1, person-2):</code></li>
+                                            <li class="indent-4">
+                                                <code>print('Hello ' + person_1 + ' & ' + person_2)</code>
+                                            </li>
+                                            <li></li>
+                                            <li><code>greet('Sam', 'John')</code> -> Hello Sam & John</li>
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
-                            
-                            <h4>The return value in a function</h4>
-                            <p>
-                                Functions usually end with a return statement of the result of the function. However, when it is not used 
-                                in a function, None is returned. The returned result can be whatever is defined within the function or 
-                                a combination of elements. Just as result returned in the above function is a list. 
-                            </p>
-                            <p>Let's illustrate this with a function that takes an argument and returns a tuple</p>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <ul class="py-term code-block">
-                                        <li><code>import math</code></li>
-                                        <li>..</li>
-                                        <li><code>def circle(radius):</code></li>
-                                        <li class="indent-4"># Obtain volume and surface area</li>
-                                        <li class="indent-4"><code>pi = math.pi</code></li>
-                                        <li class="indent-4"><code>volume = pi * radius**3</code></li>
-                                        <li class="indent-4"><code>surface_area = 3 * pi * radius**2</code></li>
-                                        <li class="indent-4"><code>return volume, surface_area</code></li>
-                                        <li>...</li>
-                                        <li><code>circle(10)</code> -> (3140, 942)</li>
-                                    </ul>
+
+                                <small>2. Uncountable arguments</small>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <ul class="py-term code-block">
+                                            <li><code>def greet(**persons):</code></li>
+                                            <li class="indent-4">
+                                                <code>print('Hello ' + persons[0] + ' & ' + persons[1])</code>
+                                            </li>
+                                            <li></li>
+                                            <li><code>greet('Sam', 'John')</code> -> Hello Sam & John</li>
+                                        </ul>
+                                    </div>
                                 </div>
+
+                                <p>We can use a list of related items as argument to put function into good use</p>
+                                <p>Let's take a list of scores of students out of a total of 400 and get their
+                                    percentage
+                                    mark</p>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <ul class="py-term code-block">
+                                            <li>student_scores = [215, 285, 321, 180, 245, 290, 154, 367, 256]</li>
+                                            <li><code>def percent_score(scores):</code></li>
+                                            <li class="indent-4"><code>result = []</code></li>
+                                            <li class="indent-4"><code>for score in scores:</code></li>
+                                            <li class="indent-8"><code>result.append(100*score/400)</code></li>
+                                            <li class="indent-4"><code>return result</code></li>
+                                            <li></li>
+                                            <li><code>percent_score(student_scores)</code> -> [53.75, 71.25, 80.25,
+                                                45.0,
+                                                61.25, 72.5, 38.5, 91.75, 64.0]</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </section>
+
+                            <section class="mb-2" id="program22">
+                                <h4 class="text-info">Program 2.2 - The return statement in a function</h4>
+                                <hr>
+                                <p>
+                                    Functions usually end with a return statement of the result of the function.
+                                    However,
+                                    when it is not used
+                                    in a function, None is returned. The returned result can be whatever is defined
+                                    within
+                                    the function or
+                                    a combination of elements. Just as result returned in the above function is a list.
+                                </p>
+                                <p>Let's illustrate this with a function that takes an argument and returns a tuple</p>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <ul class="py-term code-block">
+                                            <li><code>import math</code></li>
+                                            <li>..</li>
+                                            <li><code>def circle(radius):</code></li>
+                                            <li class="indent-4"># Obtain volume and surface area</li>
+                                            <li class="indent-4"><code>pi = math.pi</code></li>
+                                            <li class="indent-4"><code>volume = pi * radius**3</code></li>
+                                            <li class="indent-4"><code>surface_area = pi * radius**2</code></li>
+                                            <li class="indent-4"><code>return volume, surface_area</code></li>
+                                            <li>...</li>
+                                            <li><code>circle(10)</code> -> (3140, 314.2)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <p>The above function returned a tuple which is (volume, surface_area). The omitted
+                                    bracket
+                                    omitted does not
+                                    matter for tuple (not so for other data types though).
+                                </p>
+                                <p>There are many more to learn about function, for now, what we have covered is enough
+                                    to get us going.</p>
+                            </section>
+                            <hr>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="container">
+                    <div id="chapter3">
+                        <div class="row">
+                            <div class="col">
+
+                                <h3 class="">Chapter 3-Other data objects</h3>
+                                <p>We have covered the basic data types, however, we have data objects that are yet to
+                                    be
+                                    represented. The Date and time object, the file object and other special objects are
+                                    yet
+                                    to be mentioned. In programming, nothing is left out
+                                </p>
+
+                                <section id="program31">
+                                    <h4 class="text-info">Program 3.1-Datetime data object</h4>
+                                    <p>
+                                        The date data type is very useful data type that requires a coder to know as earlier as possible
+                                        In python, it is well thought through and is extensively available to meet any requirement. It 
+                                        exist as one of python's standard library and combined with time data too. The object is in datetime
+                                        module.
+                                    </p>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <ul class="py-term code-block">
+                                                <li class=""><code>import datetime</code> # usually at the top of the script (file)</li>
+                                                <li><code>my_date = datetime.date(2023, 10, 17)</code></li>
+                                                <li><code>my_date</code>-> datetime.date(2023, 10, 17) # similar to the way it is written</li>
+                                            </ul>
+                                            
+                                        </div>
+                                    </div>
+                                    <p>
+                                        This is a date object in the form datetime.date(year, month, day). The day ranges From
+                                        1 - 31, the month 1 - 12 and the year ....
+                                    </p>
+                                    <p>You can also create a time object just like you did with date object.</p>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <ul class="py-term code-block">
+                                                <li class=""><code>import datetime</code> # usually at the top of the script (file)</li>
+                                                <li><code>my_time = datetime.time(10, 30, 43, 200)</code></li>
+                                                <li><code>my_time</code>-> datetime.time(10, 30, 43, 200) # similar to the way it is written</li>
+                                            </ul>        
+                                        </div>
+                                    </div>
+                                    <p>This is a time object in the form datetime.time(hour, minute, second, millisecond)
+                                        hour ranges from 0 - 11 or 0 - 23 on a 24-hour clock, 0 - 59 for both minute and seconds and
+                                        0 - 999 for milliseconds. Numbers outside this range will generate error.
+                                    </p>
+                                    <p>We can also have a combination of date and time object</p>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <ul class="py-term code-block">
+                                                <li class=""><code>import datetime</code> # usually at the top of the script (file)</li>
+                                                <li><code>my_datetime = datetime.datetime(2023, 10, 17, 10, 30, 43, 200)</code></li>
+                                                <li><code>my_datetime</code>-> datetime.datetime(2023, 10, 17, 10, 30, 43, 200) # similar to the way it is written</li>
+                                            </ul>   
+                                        </div>
+                                    </div>
+                                    <p>Let's breakdown this data object into it's various parts</p>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <table class="table table-bordered table-striped" data-bs-toggle="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Item</th>
+                                                        <th>Syntax</th>
+                                                        <th>Result</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Year</td>
+                                                        <td>my_datetime.year</td>
+                                                        <td>2023</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Month</td>
+                                                        <td>my_datetime.month</td>
+                                                        <td>10</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Day</td>
+                                                        <td>my_datetime.day</td>
+                                                        <td>17</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Hour</td>
+                                                        <td>my_datetime.hour</td>
+                                                        <td>10</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Minute</td>
+                                                        <td>my_datetime.minute</td>
+                                                        <td>30</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Seconds</td>
+                                                        <td>my_datetime.seconds</td>
+                                                        <td>43</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Milliseconds</td>
+                                                        <td>my_datetime.milliseconds</td>
+                                                        <td>200</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Date</td>
+                                                        <td>my_datetime.date</td>
+                                                        <td>datetime.date(2023, 10, 17)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Time</td>
+                                                        <td>my_datetime.time</td>
+                                                        <td>datetime.time(10, 30, 45, 2000</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <p>The resulting numbers are integers</p>
+                                            To get current datetime, it is datetime.datetime.today().
+                                        </div>
+                                        <div class="col">
+                                            <h5>Practice</h5>
+                                            <hr>
+                                            <p>
+                                                <span class="text-danger">Q4.1:</span> A man arrived on the 17th of August, 2023 and is to leave after five days. 
+                                               Determine the date of his departure. 
+                                            </p>
+
+                                            <ul class="py-term code-block">
+                                                ##Solution:
+                                                <li><code>import datetime</code></li>
+                                                <li><code>arrived_date = datetime.date(2023, 8, 17)</code></li>
+                                                <li><code>arrived_date_day = arrived_date.day</code> # an integer</li>
+                                                <li><code>departure_date = datetime.date(2023, 8, arrived_date_day+5)</code> -> datetime.date(2023, 8, 22)</li>
+                                            </ul>
+                                            <p>This is a valid solution as long as the new day is within the range 0-31. If the man is 
+                                                to depart after 20 days. This method above will not work. The timedelta() function is available
+                                                to solve the problem, no matter the gap in the future or in the past. ( <a href="#">See datetime module course</a>)
+                                            </p>
+                                        </div>
+                                    </div>
+                                    
+                                </section>
                             </div>
-                            <p>The above function returned a tuple which is (volume, surface_area). The omitted bracket omitted does not
-                                matter for tuple (not so for other data types though)
-                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="row mt-5">
+        <div class="col bg-dark text-white">
+            <p>Chapters 4 - OOP</p>
+        </div>
+    </div>  
 </div>
-
 
 <!--Keyword Modal -->
 <div class="modal fade" id="keywordModal" tabindex="-1" aria-labelledby="keywordModalLabel" aria-hidden="true">

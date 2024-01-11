@@ -1,6 +1,4 @@
 from typing import Any
-from django import http
-from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from .products import Course
 
@@ -17,21 +15,21 @@ class ProductsListView(TemplateView):
         context['products'] = Course.LIST_OF_COURSES
         return context
     
-    def get(self, request, *args: Any, **kwargs: Any):
-        if 'category' not in request.GET:
-            return super().get(request, *args, **kwargs)
+    # def get(self, request, *args: Any, **kwargs: Any):
+    #     if 'category' not in request.GET:
+    #         return super().get(request, *args, **kwargs)
         
-        if request.GET['category'] == 'Concept':
-            c = Course.LIST_OF_COURSES
-            courses = [c.remove(i) for i in Course.LIST_OF_COURSES if i['category'] =='Concept']
-        elif request.GET['category'] == 'Basic':
-            c = Course.LIST_OF_COURSES
-            courses = [c.remove(i) for i in Course.LIST_OF_COURSES if i['category']=='Basic']  
-        else:
-            courses = Course.LIST_OF_COURSES
+    #     if request.GET['category'] == 'Concept':
+    #         c = Course.LIST_OF_COURSES
+    #         courses = [c.remove(i) for i in Course.LIST_OF_COURSES if i['category'] =='Concept']
+    #     elif request.GET['category'] == 'Basic':
+    #         c = Course.LIST_OF_COURSES
+    #         courses = [c.remove(i) for i in Course.LIST_OF_COURSES if i['category']=='Basic']  
+    #     else:
+    #         courses = Course.LIST_OF_COURSES
 
-        self.get_context_data(*args, **kwargs)['products'] = courses
-        return super().get(request, *args, **kwargs)
+    #     self.get_context_data(*args, **kwargs)['products'] = courses
+    #     return super().get(request, *args, **kwargs)
 
 
 class PythonView(TemplateView):
@@ -39,3 +37,11 @@ class PythonView(TemplateView):
 
 class NetworkFundamentalView(TemplateView):
     template_name = 'core/network_fundamental.html'
+
+class OOPView(TemplateView):
+    template_name = 'core/classOOP.html'
+
+
+class TextingView(TemplateView):
+    template_name = 'core/texting.html'
+    

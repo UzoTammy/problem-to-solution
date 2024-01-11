@@ -1,42 +1,94 @@
 {% extends 'core/base.html' %}
 
+{% block head %}
+<style>
+    
+    .circle {
+        display: inline-flex;
+        height: 120px;
+        width: 120px;
+        background: linear-gradient(to right,
+                red,
+                orange,
+                yellow,
+                green,
+                blue,
+                indigo,
+                violet);
+
+        clip-path: circle(50% at 30% 30%);
+        margin-top: 10px;
+        transition: all 2s ease;
+    }
+
+    .circle:hover {
+        clip-path: circle(50%);
+    }
+
+    .frame {
+        width: 100px;
+        height: 100px;
+        border: 1px solid white;
+        perspective: 50px;
+    }
+
+    .shape {
+        width: 100px;
+        height: 100px;
+        background-color: rgb(3, 3, 3);
+        transform: rotateX(89deg);
+    }
+</style>
+{% endblock %}
 
 {% block content %}
 <div class="container">
     <div class="row">
         <div class="col">
             <div class="vh-100 mt-3">
-                <div class="h-25 d-inline-block w-90 bg-dark text-white opacity-75 d-flex justify-content-center align-items-center">
+                <div
+                    class="h-25 d-inline-block w-90 bg-dark text-white d-flex justify-content-center align-items-center">
                     <div class="row">
                         <div class="col">
                             <h1 class="m-2">
-                                Problem to Solution Learning Platform 
+                                Problem to Solution Learning Platform
                                 <br>
                                 <span style="margin-left: 90px;">(Learn at your own pace)</span>
                             </h1>
                         </div>
                     </div>
-                    
+
                 </div>
-                <div class="h-25 d-inline-block w-100 bg-dark text-white opacity-75 d-flex justify-content-center align-items-center">
+                <div class="row bg-dark m-2">
+                    <div class="col text-center">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                    </div>
+
+                </div>
+                <div
+                    class="h-25 d-inline-block w-100 bg-dark text-white d-flex justify-content-center align-items-center">
                     <p class="m-2">
                         Amidst the vast sea of learning materials, only those skilled <br>
-                        in the art of filtration find the pure essence of knowledge necessary <br> 
+                        in the art of filtration find the pure essence of knowledge necessary <br>
                         for self-growth. We proudly declare: We are the filtrate, offering<br>
                         a carefully curated, step-by-step path to your personal development.
                     </p>
                 </div>
-
-                <div class="h-20 d-inline-block w-100 text-white d-flex justify-content-center align-items-center shadow-lg">
-                    <a href="{% url 'products-list' %}" class="btn btn-outline-dark btn-lg m-2">See Courses</a>
+                <div class="h-20 d-inline-block w-100 text-white d-flex justify-content-center align-items-center">
+                    <a href="{% url 'products-list' %}" class="btn btn-outline-dark btn-lg m-2">Courses</a>
                 </div>
+                <div class="frame">
+                    <div class="shape">
+
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
 
-
-    
 </div>
 
 {% endblock %}
-

@@ -1,0 +1,692 @@
+{% extends 'core/base.html' %}
+
+{% block head %}
+<style>
+    .fixed-section {
+        position: fixed;
+        top: 40px;
+        bottom: 0;
+        left: 0;
+        padding: 5px;
+        overflow-y: scroll;
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    /* .left-div, */
+    .right-div {
+        flex: 1;
+    }
+
+    @media (max-width: 768px) {
+        .left-div {
+            flex: 1;
+            display: none;
+            /* position: top; */
+        }
+    }
+
+    .indent-4 {
+        padding-left: 20px;
+        /* Create padding on the left side of the element */
+    }
+
+    .indent-8 {
+        padding-left: calc(2*20px);
+    }
+
+    .indent-12 {
+        padding-left: calc(3*20px);
+    }
+
+    .code-block {
+        background-color: azure;
+        border: .07rem ridge black;
+        padding-inline-end: 20px;
+    }
+
+    .py-term {
+        list-style: '>> ';
+        color: gray;
+    }
+</style>
+{% endblock%}
+
+
+{% block content %}
+
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col-sm-3 left-div">
+            <nav id="navbar-example3" class="h-100 flex-column pe-4 fixed-section">
+                <nav class="nav nav-link flex-column">
+                    <a class="nav-link m-0 link-info" href="#intro">
+                        <h5>Introduction</h5>
+                    </a>
+                </nav>
+                <nav class="nav nav-link flex-column">
+                    <a class="nav-link link-info" href="#chapter1">Chapter 1: Basics</a>
+                    <nav class="nav nav-link flex-column">
+                        <a class="nav-link link-dark ms-1 my-0" href="#program11">1.1-Classes and Objects</a>
+                        <a class="nav-link link-dark ms-1 my-0" href="#program12">1.2-Naming Classes</a>
+                        <a class="nav-link link-dark ms-1 my-0" href="#program13">1.3-Instance Variable</a>
+                        <a class="nav-link link-dark ms-1 my-0" href="#program14">1.4-Introduction to Methods</a>
+                        <a class="nav-link link-dark ms-1 my-0" href="#program15">1.5-Class Variable</a>
+                    </nav>
+                    <a class="nav-link link-info" href="#chapter2">Chapter 2: Class Inheritance</a>
+                    <nav class="nav nav-link flex-column">
+                        <a class="nav-link link-dark ms-1 my-0" href="#program21">2.1-The setup and application</a>
+                        <a class="nav-link link-dark ms-1 my-0" href="#program22">2.2-Application</a>
+                    </nav>
+                    <a class="nav-link link-info" href="#chapter3">Chapter 3: Class </a>
+                    <nav class="nav nav-link flex-column">
+                        <a class="nav-link link-dark ms-3 my-0" href="#program31">3.1-Datetime object</a>
+                        <a class="nav-link link-dark ms-3 my-0" href="#program32">3.2-Class object</a>
+                        <a class="nav-link link-dark ms-3 my-0" href="#program33">3.3-Image object</a>
+                        <a class="nav-link link-dark ms-3 my-0" href="#program34">3.4-File object</a>
+
+                    </nav>
+                </nav>
+
+            </nav>
+        </div>
+    
+        <div class="col-sm-9">
+            <div class="container">
+                <div id="chapter1">
+                    <div class="row mt-3">
+                        <div class="col">
+                            <h3 class="text-center">
+                                Object Oriented Program
+                            </h3>
+
+                            <h4>Introduction to OOP</h4>
+                            <p>
+                                Object-Oriented Programming (OOP) is a way of writing computer programs using the idea
+                                of "objects" to
+                                represent data and methods. It's like creating a mini-program (an object) for each piece
+                                of your program,
+                                where each object can contain information (data, like numbers and text) and actions
+                                (methods, like calculating
+                                or modifying that data).
+                            </p>
+                            <p>
+                                Imagine a video game with different characters. Each character can be an object.
+                                The data for each character might include their health, strength, and speed, while the
+                                actions might be
+                                things like walk, jump, or attack. Each character (object) can have its own data and
+                                actions, but they all
+                                belong to the broader game (program).
+                            </p>
+                            <p>
+                                In OOP, we use "classes" to define the blueprint of these objects, like a template for
+                                what data and
+                                actions each object will have. Then we create "instances" of these classes, which are
+                                the actual objects we
+                                use in our program.
+
+                                OOP is popular because it helps organize and manage complex programs by breaking them
+                                down into smaller,
+                                manageable, and reusable parts (objects). It also makes it easier to keep track of all
+                                the data and actions
+                                related to each part of your program.
+                            </p>
+                            <hr>
+                        </div>
+                    </div>
+                
+                    <section class="mb-2" id="program11">
+                        <h4 class="text-info">Program 1.1 - Classes and Objects</h4>
+                        <hr>
+                        <p>Create a class: A class is simply created with the class keyword followed with the name of the
+                            class.
+                            #1 is a class which has nothing and can do nothing. #2 is a class with a class variable.
+                        </p>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <ul class="py-term code-block">
+                                    <small>#1: Define a class</small>
+                                    <li><code>class Point:</code></li>
+                                    <li><code class="indent-4">pass</code></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6">
+                                <ul class="py-term code-block">
+                                    <small>#2: A class with a class variable</small>
+                                    <li><code>class Point:</code></li>
+                                    <li><code class="indent-4">X = 5</code></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <ul class="py-term code-block">
+                                    <small>#3: How classes act as blueprint or template to create class objects</small>
+                                    <li><code>class Point:</code></li>
+                                    <li><code class="indent-4">X = 5</code></li>
+                                    <li></li>
+                                    <li><code>point = Point()</code>#point is a class object</li>
+                                    <li><code>print(point.X)</code> --> 5</li>
+                                </ul>
+                                <p>X is the attribute of the class and can be accessed through a class object</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="mb-2" id="program12">
+                        <h4 class="text-info">Program 1.2 - Naming Classes</h4>
+                        <hr>
+                        <p>
+                            In python, using a clear naming convention is essential for readability and maintenance. 
+                            While not mandatory, it's highly recommended to adopt camelcase style for class names. 
+                            This involves capitalizing each word in the name to enhance clarity and distinction. 
+                            For example, a class handling bank accounts should be named 'BankAccount', 
+                            a simple coordinate class would be 'Point', and a group focused on young men's 
+                            fellowship would be aptly named 'YoungMenFellowship'. 
+                            This naming strategy not only improves code readability but also precisely reflects 
+                            the purpose and functionality of each class.
+                        </p>
+                    </section>
+
+                    <section class="mb-2" id="program13">
+                        <h4 class="text-info">Program 1.3 - Instance Variable</h4>
+                        <hr>
+                        <p>
+                            Classes in python become truly dynamic and potent when initializing their attributes. 
+                            This is achieved using the special or 'dunder' method `__init__()`. 
+                            This method activates each time the class is instantiated. Within `__init__()`, 
+                            attributes are set based on the arguments passed. Notably, the first argument is 
+                            always reserved for the class instance itself, commonly referred to as 'self'. 
+                            While using 'self' is a popular convention, it's not obligatory. This mechanism of 
+                            attribute initialization is key to harnessing the full power and 
+                            versatility of classes in object-oriented programming.
+                        </p>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <ul class="py-term code-block">
+                                    <small></small>
+                                    <li><code>class Point:</code></li>
+                                    <li><code class="indent-4">def __init__(self, x, y):</code></li>
+                                    <li><code class="indent-8">self.x = x</code></li>
+                                    <li><code class="indent-8">self.y = y</code></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6">
+                                <p>This class has two attributes, self.x and self.y and are respectively assigned x and y
+                                    arguments.
+                                    Remember the first argument is reserved for the instance of the class
+                                </p>
+                            </div>
+                        </div>
+
+                        <p>The first argument as earlier mention is reserved for the class but must not bear the name self.
+                            You can name it whatever you choose to however, self is a standard.
+                            At this stage do not forget it as you initialize the class
+                            (in other languages like JS, Java the initialize is called class constructor)
+                        </p>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p>Let us use what we have initialized, point is declared as an instance of the class Point
+                                    (please mind the upper and lower cases). Since, the class is initialized, the class must
+                                    be called
+                                    with the arguments which automatically becomes the attributes. So we can conclude that
+                                    the init method transforms arguments into attributes</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <ul class="py-term code-block">
+                                    <small></small>
+                                    <li><code>point =  Point(2, 3)</code></li>
+                                    <li><code>print(point.x)</code> --> 2</li>
+                                    <li><code>print(point.y)</code> --> 3</li>
+                                    <li><code>print(point.x + point.y)</code> --> 5</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </section>
+                    <!-- Introduction to methods -->
+                    <section class="mb-2" id="program14">
+                        <h4 class="text-info">Program 1.4 - Introduction to Methods</h4>
+                        <hr>
+                        <p>
+                            Class methods enables us to build functionalities into a class. Let's consider two classes with methods
+                            and what the methods are achieving.
+                        </p>
+                        <h5>1.4.1 - Getting to add and subtract numbers from the Maths class and also 
+                            fullname from Person class</h5>
+                        <div class="row">
+                            <div class="col">
+                                <ul class="py-term code-block">
+                                    <li><code>class Maths:</code></li>
+                                    <li><code class="indent-4">def __init__(self, number1, number2):</code></li>
+                                    <li><code class="indent-8">self.first_number = number1</code></li>
+                                    <li><code class="indent-8">self.second_number = number2</code></li>
+                                    <li></li>
+                                    <li><code class="indent-4">def add(self):</code></li>
+                                    <li><code class="indent-8">return self.first_number + self.second_number</code></li>
+                                    <li></li>
+                                    <li><code class="indent-4">def minus(self):</code></li>
+                                    <li><code class="indent-8">return self.first_number - self.second_number</code></li>
+                                    <li></li>
+                                    <li><code>maths = Maths(6, 4)</code></li>
+                                    <li><code>print(maths.add())</code>--> 10</li>
+                                    <li><code>print(maths.minus())</code>--> 2</li>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <ul class="py-term code-block">
+                                    <li><code>class Person:</code></li>
+                                    <li><code class="indent-4">def __init__(self, firstname, lastname):</code></li>
+                                    <li><code class="indent-8">self.firstname = firstname</code></li>
+                                    <li><code class="indent-8">self.lastname = laststname</code></li>
+                                    <li></li>
+                                    <li><code class="indent-4">def fullname(self):</code></li>
+                                    <li><code class="indent-8">return f'{self.firstname} {self.lastname}'</code></li>
+                                    <li></li>
+                                    <li><code>person = Person('Steve', 'Jobs')</code></li>
+                                    <li><code>print(person.fullname())</code>--> Steve Jobs</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="mb-2" id="program15">
+                        <h4 class="text-info">Program 1.5 - Class Variable</h4>
+                        <hr>
+                        <p>Class variables are a fundamental aspect of OOP in Python, allowing for the sharing of values
+                            and
+                            states across all instances of a class.
+                            Understanding how to properly define, access,
+                            and modify these variables is crucial for effective object-oriented programming.
+                        </p>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <ul class="py-term code-block">
+                                    <li><code>class Person:</code></li>
+                                    <li><code class="indent-4">num = 10</code> #defined within the class but outside
+                                    </li>
+                                    <li class="indent-4"># of the __init__ or any other method</li>
+                                    <li><code>person = Person()</code></li>
+                                    <li><code>person.num</code> -> 10 # can be accessed through the instance of the
+                                        class</li>
+                                    <li><code>Person.num</code> -> 10 # and also through the class itself</li>
+                                    <li># it is tempting to change the variable through the instance</li>
+                                    <li><code>person.num = 20</code> # this only changes for this instance</li>
+                                    <li><code>person.__dict__</code> -> 20</li>
+                                    <li><code>Person.__dict__</code> -> 10</li>
+                                    <li><code>Person.num = 20</code> # changes the class variable</li>
+                                    <li><code>Person.num</code> -> 20 # proves it</li>
+                                </ul>
+
+                            </div>
+                            <div class="col-sm-6">
+                                <ul class="py-term code-block">
+                                    <li>
+                                        <p># Lets take a practical application of the class variable</p>
+                                    </li>
+                                    <li><code>class Person:</code></li>
+                                    <li><code class="indent-4">N = 0</code> # number of instances created</li>
+                                    <li class="indent-4">def __init__(self, name):</li>
+                                    <li><code class="indent-8">self.name = name</code></li>
+                                    <li><code>Person.N += 1</code> # each time an instance in created, add 1 to N</li>
+                                    <li><code>########</code></li>
+                                    <li><code>person1 = Person('Frank')</code></li>
+                                    <li><code>Person.N</code> - > 1</li>
+                                    <li><code>person2 = Person('Susan')</code></li>
+                                    <li><code>Person.N</code> -> 2</li>
+                                    <li><code></code></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </section>
+                </div>
+
+                <!-- Class Inheritance -->
+                <div id="chapter2">
+                    <div class="row mt-3">
+                        <div class="col">
+                            <h3 class="text-center">
+                                Class Inheritance 
+                            </h3>
+                                
+                            <h4>
+                                Definition
+                            </h4>
+                            <p>
+                                Inheritance is a fundamental concept in Object-Oriented Programming (OOP), 
+                                in Python. It allows for the creation of a new class 
+                                that inherits attributes and methods from an existing class.
+                            </p>
+                            <p>
+                                Inheritance in OOP is a mechanism where a new class, known as a subclass or derived class 
+                                or child class, inherits properties (attributes) and behaviors 
+                                (methods) from an existing class, known as a superclass or base class or parent class.
+                            </p>
+                            <p>
+                                The primary purpose of inheritance is to promote code reuse and 
+                                establish a hierarchical relationship between classes.
+                            </p>
+                            <hr>
+                        </div>
+                    </div>
+                
+                    <section class="mb-2" id="program11">
+                        <h4 class="text-info">Program 1.1 - The setup and application</h4>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <ul class="py-term code-block">
+                                    <small># Parent class</small>
+                                    <li><code>class ParentClass:</code></li>
+                                    <li><code class="indent-4">pass</code></li>
+                                    <li></li>
+                                    <small># Child class</small>
+                                    <li><code>class ChildClass(ParentClass):</code></li>
+                                    <li><code class="indent-4">pass</code></li>
+                                    
+                                </ul>
+                                <p>
+                                    The BankAccount class has two attributes and three methods. We will
+                                    create another class to inherit (the attributes and methods) from the parent class.
+                                    The new class will be called Transaction class and will be responsible for reporting
+                                    transaction whenever it occurs. Inheritance is good as it does not require redisgn of 
+                                    parent class.
+                                </p>
+                            </div>
+                            <div class="col-sm-6">
+                                <ul class="py-term code-block">
+                                    <small># Practical use case: Existing parent class</small>
+                                    <li><code>class BankAccount:</code></li>
+                                    <li><code class="indent-4">def __init__(self, account_number, balance=0):</code></li>
+                                    <li><code class="indent-8">self.account_number = account_number</code></li>
+                                    <li><code class="indent-8">self.balance = balance</code></li>
+                                    <li></li>
+                                    <li><code class="indent-4">def _deposit(self, amount):</code></li>
+                                    <li><code class="indent-8">if amount > 0:</code></li>
+                                    <li><code class="indent-12">self.balance += amount</code></li>
+                                    <li><code class="indent-12">return True</code></li>
+                                    <li><code class="indent-8">return False</code></li>
+                                    <li></li>
+                                    <li><code class="indent-4">def _withdraw(self, amount):</code></li>
+                                    <li><code class="indent-8">if amount > 0:</code></li>
+                                    <li><code class="indent-12">self.balance -= amount</code></li>
+                                    <li><code class="indent-12">return True</code></li>
+                                    <li><code class="indent-8">return False</code></li>
+                                    <li></li>
+                                    <li><code class="indent-4">def get_balance(self):</code></li>
+                                    <li><code class="indent-8">return self.balance</code></li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <ul class="py-term code-block">
+                                    <small># Child class: Inhering from BankAccount class</small>
+                                    <li><code>class Transaction(BankAccount):</code></li>
+                                    <li><code class="indent-4">def __init__(self, account_number, balance=0.0):</code></li>
+                                    <li><code class="indent-8">super().__init__(account_number, balance)</code></li>
+                                    <li></li>
+                                    <li><code class="indent-4">def deposit(self, amount):</code></li>
+                                    <li><code class="indent-8">is_successful = self._deposit(amount)</code></li>
+                                    <li><code class="indent-8">if True:</code></li>
+                                    <li><code class="indent-12">print(f'${amount;,2f} successfully deposited')</code></li>
+                                    <li><code class="indent-8">else:</code></li>
+                                    <li><code class="indent-12">print(Attempt to deposit failed')</code></li>
+                                    <li></li>
+                                    <li><code class="indent-4">def _withdraw(self, amount):</code></li>
+                                    <li><code class="indent-8">self.balance -= amount</code></li>
+                                    <li></li>
+                                    <li><code class="indent-4">def get_balance(self):</code></li>
+                                    <li><code class="indent-8">return self.balance</code></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                    </section>
+
+                    <section class="mb-2" id="program12">
+                        <h4 class="text-info">Program 1.2 - Naming Classes</h4>
+                        <hr>
+                        <p>
+                            In python, using a clear naming convention is essential for readability and maintenance. 
+                            While not mandatory, it's highly recommended to adopt camelcase style for class names. 
+                            This involves capitalizing each word in the name to enhance clarity and distinction. 
+                            For example, a class handling bank accounts should be named 'BankAccount', 
+                            a simple coordinate class would be 'Point', and a group focused on young men's 
+                            fellowship would be aptly named 'YoungMenFellowship'. 
+                            This naming strategy not only improves code readability but also precisely reflects 
+                            the purpose and functionality of each class.
+                        </p>
+                    </section>
+
+                    <section class="mb-2" id="program13">
+                        <h4 class="text-info">Program 1.3 - Instance Variable</h4>
+                        <hr>
+                        <p>
+                            Classes in python become truly dynamic and potent when initializing their attributes. 
+                            This is achieved using the special or 'dunder' method `__init__()`. 
+                            This method activates each time the class is instantiated. Within `__init__()`, 
+                            attributes are set based on the arguments passed. Notably, the first argument is 
+                            always reserved for the class instance itself, commonly referred to as 'self'. 
+                            While using 'self' is a popular convention, it's not obligatory. This mechanism of 
+                            attribute initialization is key to harnessing the full power and 
+                            versatility of classes in object-oriented programming.
+                        </p>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <ul class="py-term code-block">
+                                    <small></small>
+                                    <li><code>class Point:</code></li>
+                                    <li><code class="indent-4">def __init__(self, x, y):</code></li>
+                                    <li><code class="indent-8">self.x = x</code></li>
+                                    <li><code class="indent-8">self.y = y</code></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6">
+                                <p>This class has two attributes, self.x and self.y and are respectively assigned x and y
+                                    arguments.
+                                    Remember the first argument is reserved for the instance of the class
+                                </p>
+                            </div>
+                        </div>
+
+                        <p>The first argument as earlier mention is reserved for the class but must not bear the name self.
+                            You can name it whatever you choose to however, self is a standard.
+                            At this stage do not forget it as you initialize the class
+                            (in other languages like JS, Java the initialize is called class constructor)
+                        </p>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p>Let us use what we have initialized, point is declared as an instance of the class Point
+                                    (please mind the upper and lower cases). Since, the class is initialized, the class must
+                                    be called
+                                    with the arguments which automatically becomes the attributes. So we can conclude that
+                                    the init method transforms arguments into attributes</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <ul class="py-term code-block">
+                                    <small></small>
+                                    <li><code>point =  Point(2, 3)</code></li>
+                                    <li><code>print(point.x)</code> --> 2</li>
+                                    <li><code>print(point.y)</code> --> 3</li>
+                                    <li><code>print(point.x + point.y)</code> --> 5</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <!-- Introduction to methods -->
+                    <section class="mb-2" id="program14">
+                        <h4 class="text-info">Program 1.4 - Introduction to Methods</h4>
+                        <hr>
+                        <p>
+                            Class methods enables us to build functionalities into a class. Let's consider two classes with methods
+                            and what the methods are achieving.
+                        </p>
+                        <h5>1.4.1 - Getting to add and subtract numbers from the Maths class and also 
+                            fullname from Person class</h5>
+                        <div class="row">
+                            <div class="col">
+                                <ul class="py-term code-block">
+                                    <li><code>class Maths:</code></li>
+                                    <li><code class="indent-4">def __init__(self, number1, number2):</code></li>
+                                    <li><code class="indent-8">self.first_number = number1</code></li>
+                                    <li><code class="indent-8">self.second_number = number2</code></li>
+                                    <li></li>
+                                    <li><code class="indent-4">def add(self):</code></li>
+                                    <li><code class="indent-8">return self.first_number + self.second_number</code></li>
+                                    <li></li>
+                                    <li><code class="indent-4">def minus(self):</code></li>
+                                    <li><code class="indent-8">return self.first_number - self.second_number</code></li>
+                                    <li></li>
+                                    <li><code>maths = Maths(6, 4)</code></li>
+                                    <li><code>print(maths.add())</code>--> 10</li>
+                                    <li><code>print(maths.minus())</code>--> 2</li>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <ul class="py-term code-block">
+                                    <li><code>class Person:</code></li>
+                                    <li><code class="indent-4">def __init__(self, firstname, lastname):</code></li>
+                                    <li><code class="indent-8">self.firstname = firstname</code></li>
+                                    <li><code class="indent-8">self.lastname = laststname</code></li>
+                                    <li></li>
+                                    <li><code class="indent-4">def fullname(self):</code></li>
+                                    <li><code class="indent-8">return f'{self.firstname} {self.lastname}'</code></li>
+                                    <li></li>
+                                    <li><code>person = Person('Steve', 'Jobs')</code></li>
+                                    <li><code>print(person.fullname())</code>--> Steve Jobs</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Class Inheritance -->
+                    <section class="mb-2" id="program15">
+                        <h4 class="text-info">Program 1.5 - Class Variable</h4>
+                        <hr>
+                        <p>Class variables are a fundamental aspect of OOP in Python, allowing for the sharing of values
+                            and
+                            states across all instances of a class.
+                            Understanding how to properly define, access,
+                            and modify these variables is crucial for effective object-oriented programming.
+                        </p>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <ul class="py-term code-block">
+                                    <li><code>class Person:</code></li>
+                                    <li><code class="indent-4">num = 10</code> #defined within the class but outside
+                                    </li>
+                                    <li class="indent-4"># of the __init__ or any other method</li>
+                                    <li><code>person = Person()</code></li>
+                                    <li><code>person.num</code> -> 10 # can be accessed through the instance of the
+                                        class</li>
+                                    <li><code>Person.num</code> -> 10 # and also through the class itself</li>
+                                    <li># it is tempting to change the variable through the instance</li>
+                                    <li><code>person.num = 20</code> # this only changes for this instance</li>
+                                    <li><code>person.__dict__</code> -> 20</li>
+                                    <li><code>Person.__dict__</code> -> 10</li>
+                                    <li><code>Person.num = 20</code> # changes the class variable</li>
+                                    <li><code>Person.num</code> -> 20 # proves it</li>
+                                </ul>
+
+                            </div>
+                            <div class="col-sm-6">
+                                <ul class="py-term code-block">
+                                    <li>
+                                        <p># Lets take a practical application of the class variable</p>
+                                    </li>
+                                    <li><code>class Person:</code></li>
+                                    <li><code class="indent-4">N = 0</code> # number of instances created</li>
+                                    <li class="indent-4">def __init__(self, name):</li>
+                                    <li><code class="indent-8">self.name = name</code></li>
+                                    <li><code>Person.N += 1</code> # each time an instance in created, add 1 to N</li>
+                                    <li><code>########</code></li>
+                                    <li><code>person1 = Person('Frank')</code></li>
+                                    <li><code>Person.N</code> - > 1</li>
+                                    <li><code>person2 = Person('Susan')</code></li>
+                                    <li><code>Person.N</code> -> 2</li>
+                                    <li><code></code></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--Keyword Modal -->
+<div class="modal fade" id="keywordModal" tabindex="-1" aria-labelledby="keywordModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="keywordModalLabel">Keywords</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col">
+                        <ul>
+                            <li>False</li>
+                            <li>None</li>
+                            <li>True</li>
+                            <li>and</li>
+                            <li>as</li>
+                            <li>assert</li>
+                            <li>break</li>
+                            <li>class</li>
+                            <li>continue</li>
+                            <li>def</li>
+                            <li>del</li>
+
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <ul>
+                            <li>elif</li>
+                            <li>else</li>
+                            <li>except</li>
+                            <li>finally</li>
+                            <li>for</li>
+                            <li>from</li>
+                            <li>global</li>
+                            <li>if</li>
+                            <li>import</li>
+                            <li>in</li>
+                            <li>is</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <ul>
+                            <li>lambda</li>
+                            <li>nonlocal</li>
+                            <li>not</li>
+                            <li>or</li>
+                            <li>pass</li>
+                            <li>raise</li>
+                            <li>return</li>
+                            <li>try</li>
+                            <li>while</li>
+                            <li>with</li>
+                            <li>yield</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
