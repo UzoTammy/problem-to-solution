@@ -1,6 +1,6 @@
 from typing import Any
 from django.views.generic.base import TemplateView
-from .products import Course
+from .models import Course
 
 # Create your views here.
 class IndexView(TemplateView):
@@ -12,25 +12,10 @@ class ProductsListView(TemplateView):
 
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
-        context['products'] = Course.LIST_OF_COURSES
+        context['courses'] = Course.objects.filter(pk=1)
         return context
+
     
-    # def get(self, request, *args: Any, **kwargs: Any):
-    #     if 'category' not in request.GET:
-    #         return super().get(request, *args, **kwargs)
-        
-    #     if request.GET['category'] == 'Concept':
-    #         c = Course.LIST_OF_COURSES
-    #         courses = [c.remove(i) for i in Course.LIST_OF_COURSES if i['category'] =='Concept']
-    #     elif request.GET['category'] == 'Basic':
-    #         c = Course.LIST_OF_COURSES
-    #         courses = [c.remove(i) for i in Course.LIST_OF_COURSES if i['category']=='Basic']  
-    #     else:
-    #         courses = Course.LIST_OF_COURSES
-
-    #     self.get_context_data(*args, **kwargs)['products'] = courses
-    #     return super().get(request, *args, **kwargs)
-
 
 class PythonView(TemplateView):
     template_name='core/basic_python.html'

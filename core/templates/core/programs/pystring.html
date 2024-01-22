@@ -1,0 +1,71 @@
+{% extends 'core/base.html' %}
+
+{% block head %} {% endblock %}
+
+{% block content %}
+
+<div class="container mt-3">
+    
+    <div class="row">
+        <div class="col-sm-8">
+            <h3 class="text-center">Module 2: Part 1 - Python String</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-8">
+            <p>String will be covered in two modules as it is so broad</p>
+            <p class="">
+                String are very essential and are widely used. They are stored text, characters, numbers, words, symbols and sentences, notes and 
+                even documents.
+                It will be impossible for python or any other programming language to do much without string. Understanding string now, will help
+                you alot to make progress in this course.
+            </p>
+            <p class="">
+               String is defined with single, double or triple quote before and after the value. 
+            </p>
+            <div class="col code-block py-term">
+                <li> <code>my_number = "25"</code> # my_number is defined as string type due to the double quote around the value 25</li>
+                <li class=""><code>greet = 'hello world'</code> <span># Note the single quote before and after the words</span></li>
+                <li class=""><code>address = """24 Terrace Avenue""" </code> <span class="float-right"># triple quote</span></li>
+            </div>
+            <p>
+               Text can have non-numeric characters including quotes, so these alternatives help alot in dealing with whatever nature
+               of text we pose as string.     
+            </p>
+            <div class="col code-block py-term">
+                <li> <code>his_castle = "Kelvin's house"</code> # a single quote is part of the text, so double quote is used
+                to ensure the program does not take single quote as part of the string definition.</li>
+                <li class=""><code>statement = 'He said, "I am going to win"'</code> <span># </span></li>
+                <li class=""><code>address = """24 Terrace Avenue""" </code> <span class="float-right"># triple quote</span></li>
+            </div>
+        </div>
+        <div class="col">
+            <ul class="list-group">
+                <li class="list-group-item active text-center">Prerequisite & Key Points</li>
+                
+                <li class="list-group-item">Prerequisite:
+                    <ol>
+                        <li><a href="">Basic rules</a></li>
+                        <li><a href="{% url 'py-numbers' %}">Numbers</a></li>
+                    </ol>
+                </li>
+                <li class="list-group-item">String data type is surrounded by single or double quote</li>
+                <li class="list-group-item">String is very broad and do have a dedicated module in addition</li>
+                <li class="list-group-item">It is used for store text which is the least of what it does</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- <div class="col"></div> -->
+        <div class="col-sm-8 text-center">
+            <a class="btn btn-outline-dark" href="{% url 'py-numbers' %}"><i class="fas fa-backward"></i></a>
+            <a class="btn btn-outline-dark" href="{% url 'py-modules' %}">Modules</a>
+            <a class="btn btn-outline-dark float-right" href=""><i class="fas fa-forward"></i></a>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends 'core/base.html' %}
+
+{% block head %} {% endblock %}
+
+{% block content %}
+
+<div class="container mt-3">
+    
+    <div class="row">
+        <div class="col-sm-8">
+            <h3 class="text-center">Introduction</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-8">
+            <p class="">
+                Python is an interpreted, high-level programming language renowned for its ease of use and high readability. 
+                It stands out for its exceptional versatility, being widely used in various fields such as web development, data science, 
+                artificial intelligence, and automation. 
+                This broad applicability makes it one of the most adaptable programming languages in the technological landscape.
+            </p>
+            <p class="">
+                Mastering Python, or any other programming language, represents a significant commitment, yet with a structured and organized approach, 
+                your learning journey can be greatly accelerated. On this platform, we've meticulously crafted the curriculum to be both intuitive and 
+                straightforward. Complex concepts are broken down into manageable segments – or modules – enabling you to track your progress with 
+                both clarity and confidence. Our goal is to make your learning experience as efficient and enjoyable as possible, ensuring that 
+                you effectively grasp the fundamentals of Python. Whether you're starting from scratch or refreshing your knowledge, 
+                our modular approach helps you focus precisely on what you came here to learn.
+            </p>
+            
+            <p>
+                   
+            </p>
+            <p>
+                
+            </p>
+        </div>
+        <div class="col">
+            <ul class="list-group">
+                <li class="list-group-item">Python need to be <a href="">downloaded</a> and <a href="">installed</a> if you have not.</li>
+                <li class="list-group-item">You also need an Editor, where you will develop your code called 
+                    Interphase Developemnet Environment (IDE)
+                </li>
+                <li class="list-group-item">You can also learn on an online environment.</li>
+            </ul>
+            <div class="row">
+                <div class="col">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- <div class="col"></div> -->
+        <div class="col-sm-8 text-center">
+            <a class="btn btn-outline-dark" href="{% url 'products-list' %}"><i class="fas fa-backward"></i></a>
+            <a class="btn btn-outline-dark" href="{% url 'py-modules' %}">Modules</a>
+            <a class="btn btn-outline-dark " href="{% url 'py-numbers' %}"><i class="fas fa-forward"></i></a>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

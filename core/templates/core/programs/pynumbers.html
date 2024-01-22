@@ -1,0 +1,101 @@
+{% extends 'core/base.html' %}
+
+{% block head %} {% endblock %}
+
+{% block content %}
+
+<div class="container mt-3">
+    
+    <div class="row">
+        <div class="col-sm-8">
+            <h3 class="text-center">Module 1: Numbers in Python</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-8">
+            <p class="">
+                This module is designed to give learners a clear and direct understanding of the two primary numeric types in Python: 
+                integers and floating-point numbers. 
+                Our aim is to build foundational knowledge about these types, how they are defined, and how they differ from each other.
+            </p>
+            <p>Integer: They are whole numbers without any fractional component or decimal point.
+                They are defined in python as as follows:
+            </p>
+            
+            <div class="col code-block py-term">
+                <li class=""><code>number_of_people = 25</code> <span># Where number_of_people stored the integer 25</span></li>
+            </div>
+            <p>Likewise</p> 
+                
+            <div class="col code-block py-term">
+                <li class=""><code>population = 15245635774</code> <span># another integer defined</span></li>
+            </div>
+            <p>Python like to make things clear and easy for human readability and therefore the above can also be written as</p>
+            <div class="col code-block py-term">
+                <li class=""><code>population = 15_245_635_774</code> <span># Making it easy to know this is 15m+</span></li>
+                <li># In python, the underscore is allowed for integers</li>
+            </div>
+            <p>
+                It is important to know that there is no limit to the magnitude of the integer in python.   
+            </p>
+            <ul>
+                <li>Floating-point: The second 
+                    number type is floating-point. This is a number with decimal point or fractional component.</li>
+            </ul>
+            <div class="col code-block py-term">
+                <li class=""><code>speed = 9.85</code> <span># speed variable is of the type floating-point with magnitude 9.85</span></li>
+                <li><code>data = 0.125</code> # another floating point defined</li>
+                <li><code>score = 25</code> # score is floating-point but of the same magnitude with number_of_people 
+                    defined earlier as integer</li>
+            </div>
+            <p>We can confirm the number type with python's built-in <code>type()</code> function</p>
+            <div class="col code-block py-term">
+                <li class=""><code>my_number = 58</code> <span># This is an integer</span></li>
+                <li># let us confirm that</li>
+                <li><code>print(type(my_number))</code> # -> class-int </li>
+                <li><code>area = 23.45</code> # This is a floating-point</li>
+                <li><code>print(type(area))</code> -> class_float</li>
+            </div>
+            <p>We can convert an integer to floating-point with python's built-in <code>float()</code> functions</p>
+            <div class="col code-block py-term">
+                <li class=""><code>my_number = float(my_number)</code> <span># my_number is now of type flating point</span></li>
+                <li># let us confirm it</li>
+                <li><code>print(type(my_number))</code> # -> class-float </li>
+                <li># likewise, area which is float can become an integer</li>
+                <li><code>area = int(area)</code> # area is now an integer</li>
+                <li><code>print(type(area))</code> -> class_int</li>
+                <li><code>print(area)</code> -> 23 # which is the whole number portion of the float-point area</li>
+            </div>
+            <p>What we have covered on numbers is enough to take us to the next module which is string.
+                String is so broad that a module is not enough. Click next to continue.
+            </p>
+        </div>
+
+
+        <div class="col">
+            <ul class="list-group">
+                <li class="list-group-item active text-center">Key Points</li>
+                
+                <li class="list-group-item">Numbers are Integer and Floating-point. Complex number is excluded in this module</li>
+                <li class="list-group-item">Integers are whole numbers while floating-point has fractional component or decimal point</li>
+                <li class="list-group-item">The types can be confirmed with the <code>type()</code> function</li>
+                <li class="list-group-item">The numbers can be inter converted with <code>int()</code> function
+                from float to integer and <code>float()</code> function from integer to floating-point.</li>
+                <li class="list-group-item">This knowledge will be greatly applied in almost all aspect of python programming</li>
+              </ul>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <!-- <div class="col"></div> -->
+        <div class="col-sm-8 text-center">
+            <a class="btn btn-outline-dark" href="{% url 'py-introduction' %}"><i class="fas fa-backward"></i></a>
+            <a class="btn btn-outline-dark" href="{% url 'py-modules' %}">Modules</a>
+            <a class="btn btn-outline-dark float-right" href="{% url 'py-string' %}"><i class="fas fa-forward"></i></a>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

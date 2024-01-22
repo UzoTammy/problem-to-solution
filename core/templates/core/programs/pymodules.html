@@ -1,0 +1,67 @@
+{% extends 'core/base.html' %}
+{% block head %}
+<style>
+    
+    .block {
+      border: 1px solid black;
+      padding: 10px; 
+      border-radius: 10%;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid mt-3">
+  <h3 style="color:grey">Most Recent</h3>
+  <hr>
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+    <div class="col-sm-3">
+      <a href="{% url 'py-introduction' %}"> Module 1: Introduction</a>
+      <hr>
+    </div>
+    
+    <div class="col-sm-3">
+      <a href="{% url 'py-numbers' %}"> Module 2: Numbers</a>
+      <hr>
+    </div>
+    <div class="col-sm-3">
+      <a href="{% url 'py-string' %}"> Module 3: String</a>
+      <hr>
+    </div>
+    <div class="col-sm-3">
+      <a href="{% url 'py-string' %}"> Module 4: </a>
+      <hr>
+    </div>
+    <div class="col-sm-3">
+      <a href="{% url 'py-string' %}"> Module 4: </a>
+      <hr>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+      <div class="col-sm-3">
+        <a href="{% url 'py-introduction' %}"> Module 1: Introduction</a>
+        <hr>
+      </div>
+      
+      <div class="col-sm-3">
+        <a href="{% url 'py-numbers' %}"> Module 2: Numbers</a>
+        <hr>
+      </div>
+      <div class="col-sm-3">
+        <a href="{% url 'py-string' %}"> Module 3: String</a>
+        <hr>
+      </div>
+      <div class="col-sm-3">
+        <a href="{% url 'py-string' %}"> Module 4: </a>
+        <hr>
+      </div>
+      <div class="col-sm-3">
+        <a href="{% url 'py-string' %}"> Module 4: </a>
+        <hr>
+      </div>
+  </div>
+  
+</div>
+{% endblock %}

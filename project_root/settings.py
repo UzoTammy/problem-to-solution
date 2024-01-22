@@ -40,7 +40,9 @@ INSTALLED_APPS = [
 
     'core.apps.CoreConfig',
     'users.apps.UsersConfig',
+
     'easyaudit',
+    'fontawesomefree',
 ]
 
 MIDDLEWARE = [
